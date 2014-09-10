@@ -1,4 +1,4 @@
- function deleteItem(){
+ /*function deleteItem(){
     console.log("Deleting...");
     if($(this).parent().hasClass("checked")) {
 
@@ -16,17 +16,29 @@
       return false;
     };
       
-  } 
+  } */
+
+  function moveObject() {     
+    $(this).toggleClass('checked');
+    if ( $( this ).hasClass( "checked" ) ) {
+      $(this).closest('ul').append(this);
+
+  } else {
+    $(this).closest('ul').prepend(this);
+    };
+
+  };
 
 $( document ).ready(function() {
 
-  $('li').on('click', 'div.delete', deleteItem); 
+  /* $('li').on('click', 'div.delete', deleteItem); */
 
 
 
-  /* $('li').on('click', '.delete', function() {
+  $('ul').on('click', '.delete', function() {
     $(this).closest('li').slideUp( "slow" );
-  }); */
+    $(this).off('click', moveObject);
+  }); 
 
 
 
@@ -47,16 +59,7 @@ $( document ).ready(function() {
   .keyup();
 
 
-  $('.main-right-side .list-item ul').on('click', 'li', function() {
-    $(this).toggleClass('checked');
-    if ( $( this ).hasClass( "checked" ) ) {
-    $(this).closest('ul').append(this);
-
-  } else {
-    $(this).closest('ul').prepend(this);
-    };
-
-  });
+  $('.main-right-side .list-item ul').on('click', 'li', moveObject);
 
   $('.main-right-side .list-item ul').sortable();
 
