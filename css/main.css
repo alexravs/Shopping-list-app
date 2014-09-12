@@ -1,3 +1,5 @@
+
+
 html {
 	width:100%;
 }
@@ -15,14 +17,23 @@ font-family: Dosis;
 font-size: 1.5em;
 }
 
+header ul {
+		width: 100%;
+		height:auto;
+}
+
 header ul li {
+	margin-top: 0.5em;
 	display: inline-block;
-	margin: 1em;
+	height:4em;
+	width:30.33%;
 	
 
 }
 
+
 header p {
+	margin-top: 0.8em;
 	font-weight: bold;
 }
 
@@ -68,6 +79,8 @@ header p {
 	font-size: 3.8em;
 
 }
+
+
 
 #shopping {
 	color:#3498db;
@@ -159,6 +172,7 @@ header p {
 	opacity: 0.4;
 }
 
+/*
 .total {
 	background-color: #ecf0f1;
 	height:20vh;
@@ -168,4 +182,4 @@ header p {
 
 .total ul {
 	margin-right:15%;
-}
+} */

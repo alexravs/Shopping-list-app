@@ -19,7 +19,8 @@
   } */
 
   function moveObject() {     
-    $(this).toggleClass('checked');
+    $(this).toggleClass('checked unchecked');
+
     if ( $( this ).hasClass( "checked" ) ) {
       $(this).closest('ul').append(this);
 
@@ -36,8 +37,15 @@ $( document ).ready(function() {
 
 
   $('ul').on('click', '.delete', function() {
-    $(this).closest('li').slideUp( "slow" );
-    $(this).off('click', moveObject);
+    var checked = $( ".checked" ).length;
+    var unchecked = $( ".unchecked" ).length;
+    var total = $(".main-right-side .list-item ul li").length;
+
+    $( "header ul li .trouver" ).text(unchecked);
+    $( "header ul li .trouve" ).text(checked);
+    $( "header ul li .total" ).text(total);
+
+    $(this).closest('li').remove();
   }); 
 
 
@@ -47,10 +55,22 @@ $( document ).ready(function() {
     var value = $( this ).val();
     var cross = $('<img src="img/cross.png">');
 
+    
+    
+
 
     if(e.keyCode == 13) {
-    $(this).closest('.list-item').find('ul').slideDown('slow',function() {
-      $(this).prepend( '<li><span>' + value + '</span> <div class="delete"></div> </li>' );
+
+
+    $(this).closest('.list-item').find('ul').slideDown('slow', function() {
+      $(this).prepend( '<li class="unchecked"><span>' + value + '</span> <div class="delete"></div> </li>' );
+          var checked = $( ".checked" ).length;
+    var unchecked = $( ".unchecked" ).length;
+    var total = $(".main-right-side .list-item ul li").length;
+
+    $( "header ul li .trouver" ).text(unchecked);
+    $( "header ul li .trouve" ).text(checked);
+    $( "header ul li .total" ).text(total);
     });
     $(this).val('')
     }
@@ -63,6 +83,24 @@ $( document ).ready(function() {
 
   $('.main-right-side .list-item ul').sortable();
 
+    var checked = $( ".checked" ).length;
+    var unchecked = $( ".unchecked" ).length;
+    var total = $(".main-right-side .list-item ul li").length;
+
+    $( "header ul li .trouver" ).text(unchecked);
+    $( "header ul li .trouve" ).text(checked);
+    $( "header ul li .total" ).text(total);
+
+  $('.main-right-side .list-item ul').on('click', 'li', function () {
+    var checked = $( ".checked" ).length;
+    var unchecked = $( ".unchecked" ).length;
+    var total = $(".main-right-side .list-item ul li").length;
+
+    $( "header ul li .trouver" ).text(unchecked);
+    $( "header ul li .trouve" ).text(checked);
+    $( "header ul li .total" ).text(total);
+
+  });
 
 });
 
