@@ -1,5 +1,4 @@
 
-
 html {
 	width:100%;
 }
@@ -134,6 +133,7 @@ header p {
 }
 
 
+
 .main-right-side .list-item ul li, .item-style {
 	height:3em;
 	width:85%;
@@ -152,9 +152,8 @@ header p {
 	box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
 }
 
-.main-right-side .list-item ul li span, {
-	top:5px;
-	margin: 3em;
+.main-right-side .list-item ul li span {
+
 
 
 }
@@ -166,6 +165,7 @@ header p {
 	float:right;
 	background: url('../img/cross.png') no-repeat;
 	background-size: 100% 100%;
+	display: inline-block;
 }
 
 .delete:hover {
