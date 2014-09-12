@@ -39,7 +39,7 @@ header p {
 .auteur {
 	margin-top: 2em;
 	font-family: Dosis;
-	font-size: 2em;
+	font-size: 1.5em;
 	color:white;
 }
 
@@ -136,7 +136,7 @@ header p {
 
 .main-right-side .list-item ul li, .item-style {
 	height:3em;
-	width:85%;
+	width:97%;
 	margin-left: 0.2em;
 	margin-top: 0.5em;
 	font-family: 'Poiret One', cursive;
