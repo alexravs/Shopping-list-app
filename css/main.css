@@ -41,11 +41,22 @@ header p {
 	font-family: Dosis;
 	font-size: 1.5em;
 	color:white;
+	text-decoration: none;
+}
+
+.auteur a {
+	text-decoration: none;
+}
+
+.auteur a:hover {
+	color: #fff;
+text-shadow: 0px 0px 3px #fff;
 }
 
 .auteur a:visited {
 	text-decoration: none;
 	color:white;
+
 }
 
 .main-left-side, .main-right-side {
